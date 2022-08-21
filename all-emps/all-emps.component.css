@@ -1,0 +1,6 @@
+button{
+    justify-content: end;
+    display:flex;
+    margin-bottom: 30px;
+    float: right;
+}

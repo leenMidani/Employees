@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row ">
+        <div >
+<button class="btn btn-success" (click)="add()">
+
+    Add New Employee
+</button>
+</div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="card" >
+  
+          <table class="table">
+            <thead>
+              <tr>
+  
+                <th scope="col">Full Name</th>
+                <th scope="col">Department Name</th>
+                <th scope="col">Salary</th>
+                <th scope="col">join Date</th>
+                <th scope="col">Edit</th>
+                <th scope="col"> Delete</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let em of emps">
+                <td>{{em.name}}</td>
+                <td>{{em.departmentName}}</td>
+                <td>{{em.salary}}</td>
+                <td>{{em.joinDate| date: 'dd/MM/yyyy'}}</td>
+                <td><button class="btn btn-warning" [routerLink]="['/Employee/add',em.id]" >
+                    Edit
+
+                </button></td>
+                <td><button  class="btn btn-danger" (click)="delete(em.id)">
+                    delete
+
+                </button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+      </div>
+    </div>
+  </div>
